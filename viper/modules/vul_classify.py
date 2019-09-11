@@ -24,10 +24,9 @@ class VulClassify(Module):
 
         file_path = __sessions__.current.file.path
 
-        url = cfg.vul_classify.https_proxy + '/classify?path=' + file_path
+        url = cfg.vul_classify.https_proxy + '/classify?file=' + file_path
         res = requests.post(url)
 
-        # print(res.status_code)
         if res.status_code == 200:
             value = res.json()
 
